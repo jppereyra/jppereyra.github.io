@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan P. Pereyra - Profile</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --container-bg: #f4f4f4;
+            --border-color: #333333;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --text-color: #A0D080;
+                --container-bg: #1E1E1E;
+                --border-color: #A0D080;
+            }
+        }
+        
+        body {
+            font-family: "Courier New", monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: var(--container-bg);
+            padding: 20px;
+            border: 2px solid var(--border-color);
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+        }
+        h1, h2 {
+            color: var(--text-color);
+        }
+        p {
+            color: var(--text-color);
+        }
+        .social-links a {
+            display: block;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://avatars.githubusercontent.com/u/599123?v=4" alt="Juan P. Pereyra">
+        <h1>Juan P. Pereyra</h1>
+        <p>Short bio about yourself. Your profession, interests, or anything you'd like to share.</p>
+        
+        <h2>Work Experience</h2>
+        <p><strong>Job Title</strong> - Company Name (Year - Present)</p>
+        <p>Brief description.</p>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/jppereyra/">LinkedIn</a>
+        </div>
+    </div>
+</body>
+</html>
+
