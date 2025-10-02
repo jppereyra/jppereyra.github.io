@@ -1,0 +1,57 @@
+<!doctype html><html class="dark light" lang=en><head><meta charset=UTF-8><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1.0" name=viewport><meta content=https://juanpereyra.com/ name=base><title>
+            
+                Algorithms
+            
+        </title><meta content=Algorithms property=og:title><meta content="Personal website." property=og:description><meta content="Personal website." name=description><link href=https://juanpereyra.com/icons/favicon/favicon.svg rel=icon type=image/png><link href=https://juanpereyra.com/fonts.css rel=stylesheet><link media="(prefers-color-scheme: dark)" href=/syntax-theme-dark.css rel=stylesheet><link media="(prefers-color-scheme: light)" href=/syntax-theme-light.css rel=stylesheet><script defer src=https://juanpereyra.com/js/codeblock.js></script><script defer src=https://juanpereyra.com/js/toc.js></script><script src=https://juanpereyra.com/js/note.js></script><script>MathJax = {
+              tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+              }
+            };</script><script async id=MathJax-script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script><link title="
+    Juan P. Pereyra
+" href=https://juanpereyra.com/atom.xml rel=alternate type=application/atom+xml><link href=https://juanpereyra.com/theme/light.css rel=stylesheet><link href=https://juanpereyra.com/theme/dark.css id=darkModeStyle rel=stylesheet><script src=https://juanpereyra.com/js/themetoggle.js></script><script>setTheme(getSavedTheme());</script><link href=https://juanpereyra.com/main.css media=screen rel=stylesheet><body><div class=left-content></div><div class=content><nav><div class=left-nav><a href=https://juanpereyra.com/>Juan P. Pereyra</a><div class=socials></div></div><div class=right-nav><a onclick="toggleTheme(); event.preventDefault();" href=# id=dark-mode-toggle> <img alt=Light id=sun-icon src=https://juanpereyra.com/icons/sun.svg style=filter:invert()> <img alt=Dark id=moon-icon src=https://juanpereyra.com/icons/moon.svg> </a><script>updateItemToggleTheme()</script></div></nav><div data-selector="main article p" class=visible-element-observer-root><main><article><div class=title><div class=page-header>Algorithms</div><div class=meta>Posted on <time>2025-09-25</time><span class=tags-label>::</span><span class=tags> <a class=post-tag href=https://juanpereyra.com/tags/learn-to-code/>learn to code</a> </span></div></div><section class=body><p>I have been using the word <em>algorithm</em> a bit loosely in my conversations lately, so I though I'd clarify a few things.<blockquote><p>The modern meaning for algorithm is quite similar to that of <em>recipe, process, method, technique, procedure, routine, rigmarole,</em> except that the word "algorithm" connotes something just a little different. Besides merely being a finite set of rules that gives a sequence of operations for solving a specific type of problem, an algorithm has five important features — The Art of Computer Programming, Volume 1, p. 4.</blockquote><p>In summary, those 5 features are:<ul><li>Finiteness. It must always terminate after a finite number of steps. It can't run forever.<li>Definiteness. Each step must be precisely defined; the actions to be carried out must be rigorously and unambiguously specified for each case.<li>Input. It has zero or more inputs. Values may be given to the algorithm before it begins to use as an input.<li>Output. It has at least one output, and said output or outputs will have a relation to the input.</ul><p>These definitions are valid across all programming languages; they are fundamental in nature.<p>In addition to those 5 features, and algorithm will likely make use of intermediary calculated values, or variables. And a useful way to design and test an algorithm, is by running through an example. For instance, let's say I want to make an algorithm to calculate the factorial of a number, I may write something like:<pre class=z-code><code><span class="z-text z-plain">name: factorial
+</span><span class="z-text z-plain">inputs: n
+</span><span class="z-text z-plain">outputs: result
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">n &lt; 0 -> result is not defined
+</span><span class="z-text z-plain">n = 0 -> result = 1
+</span><span class="z-text z-plain">n > 0 -> result = factorial of (n-1)
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">description: I will multiply 1, 2, 3, 4... up to n and return it as a result.
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">define auxiliary variable: i
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">1: if n is &lt; 0 return an error, as this is undefined
+</span><span class="z-text z-plain">2: result = 1, i = 1
+</span><span class="z-text z-plain">3: if n equals 0 return result and end execution here, otherwise continue
+</span><span class="z-text z-plain">4: if i > n return result, otherwise continue
+</span><span class="z-text z-plain">5: multiply result by i, store it in result
+</span><span class="z-text z-plain">6: increment i by 1
+</span><span class="z-text z-plain">7: go to line 4
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">test:
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">factorial of 5
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">1:  5 is not negative, so we continue
+</span><span class="z-text z-plain">2:  result = 1, i = 1
+</span><span class="z-text z-plain">3:  5 is greater than 0, so we continue
+</span><span class="z-text z-plain">4:  i is 1 and 1 &lt; 5, so we continue
+</span><span class="z-text z-plain">5:  1 * 1 = 1, result = 1
+</span><span class="z-text z-plain">6:  i = 2
+</span><span class="z-text z-plain">7:  i is 2 and 2 &lt; 5, so we continue
+</span><span class="z-text z-plain">8:  1 * 2 = 2, result = 2
+</span><span class="z-text z-plain">9:  i = 3
+</span><span class="z-text z-plain">10: i is 3 and 3 &lt; 5, so we continue
+</span><span class="z-text z-plain">11: 2 * 3 = 6, result = 6
+</span><span class="z-text z-plain">12: i = 4
+</span><span class="z-text z-plain">13: i is 4 and 4 &lt; 5, so we continue
+</span><span class="z-text z-plain">14: 6 * 4 = 24, result = 24
+</span><span class="z-text z-plain">15: i = 5
+</span><span class="z-text z-plain">16: i is 5 and 5 = 5, so we continue
+</span><span class="z-text z-plain">17: 24 * 5 = 120, result = 120
+</span><span class="z-text z-plain">18: i = 6
+</span><span class="z-text z-plain">19: i is 6, 6 > 5 so we stop execution and return result
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">result = 120
+</span><span class="z-text z-plain">
+</span></code></pre><p>It might seem tedious at first, but the more you practice the quicker you'll get, picking up patterns along the way, going back and improving previous algorithms you build as well!<p>I see writing things down as a way to slow down the thinking process and being able to focus on the details, but everyone is different. I read somewhere that Nikola Tesla was known to devise entire machine designs in his head, and then build them directly; which is definitely not how it works for me.<p>Give a try!</section></article></main></div></div><div class=right-content></div>
