@@ -1,0 +1,56 @@
+# The URL the site will be built for
+base_url = "https://juanpereyra.com"
+
+theme = "radion"
+
+generate_feeds = true
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+title = "jp's lair"
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+taxonomies = [
+  { name = "categories", feed = true },
+  { name = "tags", feed = true },
+]
+
+[search]
+
+index_format = "elasticlunr_json"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+highlight_theme = "one-dark"
+
+[extra]
+
+radion_title = "JP's Lair"
+toc = true
+theme = "auto"
+enable_search = true
+codeblock = true
+latex = true
+conver_image = "cover.png"
+favicon = true
+
+comments = true  # {true, false}; sets global enabling of comments by default
+giscus_repo = "jppereyra/jppereyra.github.io"
+giscus_repo_id = "R_kgDOOCp0fw"
+giscus_data_category_id = "DIC_kwDOOCp0f84CwHyp"
+giscus_data_category = "Announcements"
+
+
+radion_menu = [
+  {url = "$BASE_URL", name = "Home"},
+  {url = "$BASE_URL/categories", name = "Categories"},
+  {url = "$BASE_URL/tags", name = "Tags"},
+]
+
+author = "Juan P. Pereyra"
